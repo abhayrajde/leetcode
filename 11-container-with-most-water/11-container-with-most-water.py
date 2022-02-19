@@ -1,10 +1,7 @@
 class Solution(object):
     def maxArea(self, height):
-        # width = len(height)
         i = 0
         j = len(height)-1
-        # l = height[0]
-        # r = height[-1]
         area = []
         count = len(height) - 1
         while(i != j):
