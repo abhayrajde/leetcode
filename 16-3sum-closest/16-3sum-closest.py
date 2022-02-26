@@ -23,13 +23,6 @@ class Solution(object):
                     
                 else:
                     return(target)
-                # min1 = min(min1,temp1)
-                # if(temp<target):
-                #     low+=1
-                # elif(temp==target):
-                #     break
-                # else:
-                #     high-=1
         return(mintemp)
                 
         """
