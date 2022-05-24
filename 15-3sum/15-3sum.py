@@ -1,6 +1,5 @@
 class Solution(object):
-    def threeSum(self, nums):
-        
+    def threeSum(self, nums):   
         # O(N^2) SOLUTION
         nums.sort()
         output_list = []
