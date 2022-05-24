@@ -1,17 +1,35 @@
 class Solution(object):
     def maxArea(self, height):
-        i = 0
-        j = len(height)-1
-        area = []
-        count = len(height) - 1
-        while(i != j):
-            area.append(min(height[i],height[j])*count)
-            if(height[i]<height[j]):
-                i+=1
+        start = 0
+        end = len(height)-1
+        max1 = (end - start) * min(height[start],height[end])
+        if(height[start] > height[end]):
+            end-=1
+        else:
+            start+=1
+        
+        while(end > start):
+            temp = (end - start) * min(height[start],height[end])
+            if(temp > max1):
+                max1 = temp
+            if(height[start] > height[end]):
+                end-=1
             else:
-                j-=1
-            count-=1
-        return(max(area))
+                start+=1
+        return(max1)
+            
+        # i = 0
+        # j = len(height)-1
+        # area = []
+        # count = len(height) - 1
+        # while(i != j):
+        #     area.append(min(height[i],height[j])*count)
+        #     if(height[i]<height[j]):
+        #         i+=1
+        #     else:
+        #         j-=1
+        #     count-=1
+        # return(max(area))
         
         """
         :type height: List[int]
