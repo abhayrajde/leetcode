@@ -18,7 +18,7 @@ class Solution(object):
             while(i>=0 and j<len(s) and s[i] == s[j]):
                 if(j-i+1>pal_len):
                     pal = s[i:j+1]
-                    pal_len = j-i+1
+                    pal_len = len(pal)
                 i-=1
                 j+=1
 
@@ -29,7 +29,7 @@ class Solution(object):
             while(i>=0 and j<len(s) and s[i] == s[j]):
                 if(j-i+1>pal_len):
                     pal = s[i:j+1]
-                    pal_len = j-i+1
+                    pal_len = len(pal)
                 i-=1
                 j+=1
         return(pal)
