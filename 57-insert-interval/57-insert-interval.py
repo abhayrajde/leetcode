@@ -1,8 +1,6 @@
 class Solution(object):
     def insert(self, intervals, newInterval):
-        # list1 = []
-        # intervals.append(newInterval)
-        # intervals = sorted(intervals,key = lambda x:x[0])
+        # Edge Case - if list is empty
         if(intervals == []):
             intervals.append(newInterval)
             return(intervals)
@@ -12,6 +10,7 @@ class Solution(object):
             if(intervals[i][0]>=newInterval[0]):
                 intervals.insert(i,newInterval)
             
+            #Edge Case - if the newIntervals start is bigger than all the terms in the list
             elif(i == len(intervals)-1):
                 intervals.append(newInterval)
         i = 0
