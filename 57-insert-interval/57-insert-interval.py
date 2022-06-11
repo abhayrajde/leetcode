@@ -1,11 +1,19 @@
 class Solution(object):
     def insert(self, intervals, newInterval):
-        list1 = []
-        intervals.append(newInterval)
+        # list1 = []
+        # intervals.append(newInterval)
         intervals = sorted(intervals,key = lambda x:x[0])
-        # for i in range(len(intervals)):
-        #     if(intervals[i][0]>=newInterval[0]):
-        #         intervals.insert(i-1,newInterval)
+        if(intervals == []):
+            intervals.append(newInterval)
+            return(intervals)
+            
+        for i in range(len(intervals)):
+                
+            if(intervals[i][0]>=newInterval[0]):
+                intervals.insert(i,newInterval)
+            
+            elif(i == len(intervals)-1):
+                intervals.append(newInterval)
         i = 0
         while(i<len(intervals)-1):
             if(intervals[i][1]>=intervals[i+1][0]):
