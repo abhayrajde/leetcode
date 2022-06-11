@@ -2,7 +2,7 @@ class Solution(object):
     def insert(self, intervals, newInterval):
         # list1 = []
         # intervals.append(newInterval)
-        intervals = sorted(intervals,key = lambda x:x[0])
+        # intervals = sorted(intervals,key = lambda x:x[0])
         if(intervals == []):
             intervals.append(newInterval)
             return(intervals)
