@@ -3,8 +3,7 @@ class Solution(object):
         res = []
         def dfs(i,cur,total):
             if(total == target):
-                temp = copy.deepcopy(cur)
-                res.append(temp)
+                res.append(copy.deepcopy(cur))
                 return
             
             if(i>=len(candidates) or total>target):
