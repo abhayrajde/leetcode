@@ -1,5 +1,6 @@
 class Solution(object):
     def maxArea(self, height):
+        """
         start = 0
         end = len(height)-1
         max1 = (end - start) * min(height[start],height[end])
@@ -17,7 +18,37 @@ class Solution(object):
             else:
                 start+=1
         return(max1)
-            
+        """
+        start = 0
+        end = len(height)-1
+        max1 = 0
+        while(start<end):
+            temp = (end-start) * min(height[start],height[end])
+            if(temp>max1):
+                max1 = temp
+            if(height[start]>=height[end]):
+                end-=1
+            else:
+                start+=1
+        return(max1)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         # i = 0
         # j = len(height)-1
         # area = []
