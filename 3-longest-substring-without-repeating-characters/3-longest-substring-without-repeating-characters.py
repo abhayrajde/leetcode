@@ -2,6 +2,19 @@ class Solution(object):
     def lengthOfLongestSubstring(self, s):
         # s = "abcabcbb"
         # s = "pwwkew"
+        hm = {}
+        op = 0
+        l,r = 0,0
+        while(r<len(s)):
+            if(s[r] not in hm):
+                hm[s[r]] = r
+            else:
+                l = max(l,hm[s[r]]+1)
+                hm[s[r]] = r
+            op = max(op,r-l+1)
+            r+=1
+        return(op)
+        """
         map1 = {}
         op = 0
         # i = 0
@@ -19,24 +32,7 @@ class Solution(object):
             op = max(op,(r-l+1))
             r+=1
         return(op)
-        """
-        list1 = [] 
-        op = ""
-        temp1 = ""
-        for i in range(len(s)):
-            if(s[i] not in list1):
-                list1.append(s[i])
-                temp1 += s[i]
-                if(len(temp1)>len(op)):
-                    op = temp1
-            else:
-                list1 = []       # we will overwrite list1 and make it blank
-                list1.append(s[i])
-                temp1 = s[i]
-                if(len(temp1)>len(op)):
-                    op = temp1
-        return(len(op))
-        """                
+        """               
         """
         :type s: str
         :rtype: int
