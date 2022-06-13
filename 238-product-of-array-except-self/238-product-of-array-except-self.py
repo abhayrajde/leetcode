@@ -12,6 +12,8 @@ class Solution(object):
             res[j] *= postfix
             postfix *= nums[j]
         return(res)
+            
+            
         # #Time Complexity - O(n^2) - not okay
         # l = len(nums)
         # op = [1]*l
