@@ -21,47 +21,7 @@ class Solution(object):
         else:
             op.next = l2
         return(temp.next)
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        """
-        temp = ListNode()
-        op = temp
-        while(l1 and l2):
-            if(l1.val<=l2.val):
-                op.next = l1
-                l1 = l1.next
-                
-            elif(l1.val>l2.val):
-                op.next = l2
-                l2 = l2.next
-            op = op.next # here we will store None in op
-            #print(op)
-        
-        if(l1):
-            op.next = l1
-                
-        
-        elif(l2):
-            op.next = l2
-            
-        return(temp.next)
-        """
+       
         """
         :type l1: ListNode
         :type l2: ListNode
