@@ -13,6 +13,7 @@ class Solution(object):
         return(1+max(self.maxDepth(root.left),self.maxDepth(root.right)))
         """
         
+        """
         # BFS solution
         if (not root):
             return(0)
@@ -28,11 +29,23 @@ class Solution(object):
                     q.append(curr.right)
             levels += 1
         return(levels)
-        
+        """
         
         # Iterative DFS Solution
+        if(not root):
+            return(0)
         
-        
+        stack = [[root, 1]]
+        res = 1
+        while(stack):
+            node, height = stack.pop(0)
+            
+            if(node):
+                res = max(res,height)
+                stack.append([node.left, height+1])
+                stack.append([node.right,height+1])
+        return(res)
+                
         
         
         """
