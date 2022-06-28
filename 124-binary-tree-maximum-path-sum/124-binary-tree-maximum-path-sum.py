@@ -7,20 +7,20 @@
 class Solution(object):
     def maxPathSum(self, root):
         node = root
-        res = [root.val]
+        res = [node.val]
         
-        def dfs(root):
-            if not root:
+        def dfs(node):
+            if not node:
                 return 0 
-            leftmax = dfs(root.left)
-            rightmax = dfs(root.right)
+            leftmax = dfs(node.left)
+            rightmax = dfs(node.right)
             
             leftmax = max(leftmax, 0)
             rightmax = max(rightmax, 0)
-            res[0] = max(res[0], (root.val + leftmax + rightmax))
+            res[0] = max(res[0], (node.val + leftmax + rightmax))
             
-            return(max((root.val + leftmax),(root.val + rightmax)))
-        dfs(root)
+            return(max((node.val + leftmax),(node.val + rightmax)))
+        dfs(node)
         return(res[0])
         
         
