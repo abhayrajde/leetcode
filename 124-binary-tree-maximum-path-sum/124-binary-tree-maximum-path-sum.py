@@ -7,9 +7,11 @@
 class Solution(object):
     def maxPathSum(self, root):
         node = root
-        res = [node.val]
+        # global res
+        self.res = node.val
         
         def dfs(node):
+            global res
             if not node:
                 return 0 
             leftmax = dfs(node.left)
@@ -17,11 +19,11 @@ class Solution(object):
             
             leftmax = max(leftmax, 0)
             rightmax = max(rightmax, 0)
-            res[0] = max(res[0], (node.val + leftmax + rightmax))
+            self.res = max(self.res, (node.val + leftmax + rightmax))
             
             return(max((node.val + leftmax),(node.val + rightmax)))
         dfs(node)
-        return(res[0])
+        return(self.res)
         
         
         
