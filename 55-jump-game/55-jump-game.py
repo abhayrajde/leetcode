@@ -1,6 +1,12 @@
 class Solution(object):
     def canJump(self, nums):
-        reach = [False]*len(nums)
+        goal = len(nums)-1
+        for i in range(len(nums)-1,-1,-1):
+            if((nums[i]+i)>=goal):
+                goal = i
+        return(True) if(goal == 0) else (False)
+        
+        """reach = [False]*len(nums)
         # reach[-1] = True
         for i in range(len(nums)-1,-1,-1):
             if(nums[i]+i >= len(nums)-1):
@@ -11,7 +17,7 @@ class Solution(object):
                         reach[i] = True
                         break
         return(reach[0])
-        
+        """
         """
         :type nums: List[int]
         :rtype: bool
