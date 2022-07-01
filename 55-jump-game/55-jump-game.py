@@ -4,7 +4,10 @@ class Solution(object):
         for i in range(len(nums)-1,-1,-1):
             if((nums[i]+i)>=goal):
                 goal = i
-        return(True) if(goal == 0) else (False)
+        if(goal == 0):
+            return(True)
+        else:
+            return(False)
         
         """reach = [False]*len(nums)
         # reach[-1] = True
