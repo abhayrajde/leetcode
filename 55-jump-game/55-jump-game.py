@@ -3,7 +3,6 @@ class Solution(object):
         reach = [False]*len(nums)
         # reach[-1] = True
         for i in range(len(nums)-1,-1,-1):
-            # print(nums[i]+i)
             if(nums[i]+i >= len(nums)-1):
                 reach[i] = True
             else:
@@ -11,7 +10,6 @@ class Solution(object):
                     if(reach[j]):
                         reach[i] = True
                         break
-        # print(reach)
         return(reach[0])
         
         """
