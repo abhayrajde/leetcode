@@ -17,18 +17,16 @@ class LRUCache(object):
         """
         
     def remove(self,node):
-        prev = node.prev
-        nxt = node.next
-        prev.next = nxt
-        nxt.prev = prev
+        node.prev.next = node.next
+        node.next.prev = node.prev
     
     #insert at the right
     def insert(self,node):
-        prev, nxt = self.right.prev, self.right
-        prev.next = node
+        node.prev = self.right.prev
+        node.next = self.right
+        self.right.prev.next = node
         self.right.prev = node
-        node.next = nxt
-        node.prev = prev
+        
         
     def get(self, key):
         if(key in self.cache):
