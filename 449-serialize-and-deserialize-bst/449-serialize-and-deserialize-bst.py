@@ -18,9 +18,9 @@ class Codec:
             dfs(node.left)
             dfs(node.right)
         dfs(node)
-        return(",".join(res))
-        # str1 = ",".join(res)
-        # return(str1)
+        # return(",".join(res))
+        str1 = ",".join(res)
+        return(str1)
         """Encodes a tree to a single string.
         
         :type root: TreeNode
