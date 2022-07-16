@@ -30,10 +30,7 @@ class Solution(object):
             
             if(self.validate(board,position)):
                 board[position[0]][position[1]] = "Q"
-                
-                if(self.solve(board,col+1,res)):
-                    pass
-                    # return(True)
+                self.solve(board,col+1,res)
             
             board[position[0]][position[1]] = "."
         return(False)
