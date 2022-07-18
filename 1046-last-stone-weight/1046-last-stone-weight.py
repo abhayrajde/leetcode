@@ -15,9 +15,8 @@ class Solution(object):
                 y = abs(y)
                 heapq.heappush(stones,y - x)
         if(len(stones)==0):
-            return(0)
-        else:
-            return(-1*(stones[0]))
+            return(0)    
+        return(-1*(stones[0]))
             
             
         """
