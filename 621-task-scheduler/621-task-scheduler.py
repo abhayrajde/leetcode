@@ -1,12 +1,12 @@
 class Solution(object):
     def leastInterval(self, tasks, n):
-        print(tasks)
+        # print(tasks)
         count = {}
         for i in range(len(tasks)):
             if(tasks[i] not in count):
                 count[tasks[i]] = 0
             count[tasks[i]]+=1
-        print(count)
+        # print(count)
         
         # maxheap = []
         # for i in range(len(count)):
