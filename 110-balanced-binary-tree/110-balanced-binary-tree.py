@@ -9,11 +9,9 @@ class Solution(object):
         self.bal = True
         def dfs(node):
             if(not node):
-                # return([True,0])
                 return(0)
             left = dfs(node.left)
             right = dfs(node.right)
-            # height_diff = abs(left[1] - right[1]) 
             if(abs(left-right) > 1):
                 self.bal = False
             height = 1 + max(left,right)
