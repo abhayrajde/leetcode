@@ -1,5 +1,8 @@
 class Solution(object):
     def searchMatrix(self, matrix, target):
+        
+        # Time Complexity - logM + logN
+        
         top = 0
         bottom = len(matrix) - 1
         
@@ -28,11 +31,6 @@ class Solution(object):
             else: return(True)
         
         return(False)
-        
-         
-            
-        
-        
         
         """
         #Time Complexity (m + logn)
