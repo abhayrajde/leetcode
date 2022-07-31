@@ -7,7 +7,6 @@
 class Solution(object):
     def hasPathSum(self, root, targetSum):
         currsum = 0
-        # res = False
         def dfs(node,currsum):
             if(not node):
                 return False
