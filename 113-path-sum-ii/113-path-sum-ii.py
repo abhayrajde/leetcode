@@ -12,7 +12,6 @@ class Solution(object):
             if(not node):
                 return
             sum1 = currsum+node.val
-            print(sum1)
             if(sum1 == targetSum and not node.right and not node.left):
                 currpath+=[node.val]
                 res.append(currpath)
