@@ -17,15 +17,15 @@ class Solution(object):
             if(not node):
                 return(0)
             count = 0
-            
-            if(node.val == currsum):
+            currsum += node.val
+            if(currsum == targetSum):
                 count = 1
             
-            count+=dfs2(node.left,currsum-node.val)
-            count+=dfs2(node.right, currsum-node.val)
+            count+=dfs2(node.left,currsum)
+            count+=dfs2(node.right, currsum)
             
             return(count)
-        return(dfs(root,targetSum))
+        return(dfs(root,0))
             
         """
         :type root: TreeNode
