@@ -15,6 +15,8 @@ class Solution(object):
             count+=1
             for i in range(len(q)):
                 cur = q.popleft()
+                
+                # if both -> left and right of the node are empty--return count
                 if(not cur.left and not cur.right):
                     return(count)
                 if(cur.left):
