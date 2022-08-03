@@ -25,6 +25,7 @@ class Solution(object):
                 
             res.append(level_values)
         
+        # To reverse alternate elements
         rev = False
         for i in res:
             if(rev):
@@ -32,6 +33,7 @@ class Solution(object):
                 rev = False
             else:
                 rev = True
+                
         return(res)
         """
         :type root: TreeNode
