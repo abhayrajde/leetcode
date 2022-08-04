@@ -19,12 +19,10 @@ class Solution(object):
             qlen = len(q)-1
             for i in range(len(q)):
                 curr = q.popleft()
-                # res.append(curr.val)
                 
                 # Logic for populating the last term with null
                 if(i != qlen):
                     curr.next = q[0]
-                    # res.append("#")
                 else:
                     curr.next = None
                     
