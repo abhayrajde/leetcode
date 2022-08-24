@@ -4,6 +4,8 @@ class Solution(object):
         prereq = {c:[] for c in range(numCourses)}
         for crs,pre in prerequisites:
             prereq[crs].append(pre)
+        
+        #****the below code will not create the empty list which is also needed
         # for crs,pre in prerequisites:
         #     if(crs not in prereq):
         #         prereq[crs] = []
