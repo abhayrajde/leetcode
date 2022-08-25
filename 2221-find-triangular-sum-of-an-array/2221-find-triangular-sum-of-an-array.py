@@ -1,6 +1,6 @@
 class Solution(object):
     def triangularSum(self, nums):
-        
+        #TC - O(N^2)
         while(len(nums)>1):
             for i in range(len(nums)-1):
                 temp = nums[i] + nums[i+1]
