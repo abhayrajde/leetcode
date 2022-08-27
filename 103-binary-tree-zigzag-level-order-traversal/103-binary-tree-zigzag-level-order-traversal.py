@@ -10,31 +10,25 @@ class Solution(object):
             return []
         
         q = deque([root])
+        reverse = False
         res = []
-        
         while(q):
-            level_values = []
+            temp = []
             for i in range(len(q)):
-                cur = q.popleft()
-                level_values.append(cur.val)
-                
-                if(cur.left):
-                    q.append(cur.left)
-                if(cur.right):
-                    q.append(cur.right)
-                
-            res.append(level_values)
-        
-        # To reverse alternate elements
-        rev = False
-        for i in res:
-            if(rev):
-                i.reverse()
-                rev = False
+                curr = q.popleft()
+                temp.append(curr.val)
+                if(curr.left):
+                    q.append(curr.left)
+                if(curr.right):
+                    q.append(curr.right)
+            if(reverse):
+                temp = temp[::-1]
+                res.append(temp)
+                reverse = False
             else:
-                rev = True
-                
-        return(res)
+                res.append(temp)
+                reverse = True
+        return res
         """
         :type root: TreeNode
         :rtype: List[List[int]]
