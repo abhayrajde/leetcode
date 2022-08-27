@@ -1,10 +1,10 @@
 class Solution(object):
     def numberOfWays(self, s):
-        pre0 = [0]*len(s)
-        pre1 = [0]*len(s)
         n = len(s)
+        pre0 = [0]*n
+        pre1 = [0]*n
         
-        for i in range(len(s)):
+        for i in range(n):
             if(s[i] == "0"):
                 if(i == 0):
                     pre0[0] = 1
@@ -18,7 +18,7 @@ class Solution(object):
                     pre1[i] = pre1[i-1]+1
                     pre0[i] = pre0[i-1]
         res = 0
-        for i in range(1,len(s)-1):
+        for i in range(1,n-1):
             if(s[i] == "0"):
                 x = pre1[i-1]
                 y = pre1[n-1] - pre1[i]
@@ -27,7 +27,6 @@ class Solution(object):
                 x = pre0[i-1]
                 y = pre0[n-1] - pre0[i]
                 res += (x*y)
-                # res += (pre0[i-1]*pre0[n-1])
         return res
                 
         """
