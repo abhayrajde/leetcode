@@ -1,47 +1,29 @@
 class Solution(object):
     def calculate(self, s):
-        stack = []
-        i = 0
-        while i<len(s):
-            cur = 0
-            if(s[i].isdigit()):
-                while i < len(s) and s[i].isdigit():
-                    cur = cur*10 + int(s[i])
-                    i+=1
-                # i-=1
-                if(stack and (stack[-1] == "*" or stack[-1] == "/")):
-                    mid = stack.pop()
-                    first = stack.pop()
-                    if(mid == "*"):
-                        cur = first * cur
-                        # stack.append(first)
+        if not s:
+            return "0"
+        stack, num, sign = [], 0, "+"
+        for i in xrange(len(s)):
+            if s[i].isdigit():
+                num = num*10+int(s[i])
+            if (not s[i].isdigit() and not s[i].isspace()) or i == len(s)-1:
+                if sign == "-":
+                    stack.append(-num)
+                elif sign == "+":
+                    stack.append(num)
+                elif sign == "*":
+                    stack.append(stack.pop()*num)
+                else:
+                    # temp = stack.pop()
+                    # stack.append(int(temp/num))
+                    tmp = stack.pop()
+                    if tmp//num < 0 and tmp%num != 0:
+                        stack.append(tmp//num+1)
                     else:
-                        cur = int(first/cur)
-                        # stack.append(first)
-                # i+=1
-                stack.append(cur)
-            elif(s[i] == "+" or s[i] == "/" or s[i] == "*" or s[i] == "-"):
-                stack.append(s[i])
-                i+=1
-             
-            elif(s[i] == " "):
-                i+=1
-                continue
-            # print stack
-            
-        cur = stack.pop(0)
-        while stack:
-            # first = stack.pop(0)
-            operator = stack.pop(0)
-            second = stack.pop(0)
-            if(operator == "-"):
-                cur = cur-second
-                # stack.insert(0,cur)
-            else:
-                cur = cur+second
-                # stack.insert(0,cur)
-        return cur
-            
+                        stack.append(tmp//num)
+                sign = s[i]
+                num = 0
+        return sum(stack)
                 
         """
         :type s: str
