@@ -1,10 +1,10 @@
 class Solution(object):
     def reorganizeString(self, s):
-        hm = collections.Counter(s)
+        hm = collections.defaultdict(int)
         
-        # for i in s:
-        #     hm[i]+=1
-        print hm
+        for i in s:
+            hm[i]+=1
+            
         heap = [(-value,letter) for letter, value in hm.items()]
         
         heapq.heapify(heap)
