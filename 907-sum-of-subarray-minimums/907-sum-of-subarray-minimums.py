@@ -25,10 +25,10 @@ class Solution(object):
         result = []                
         for i in range(len(arr)):
             result.append(arr[i]*left[i]*right[i])
-        print left
+#         print left
         
-        print right
-        print result
+#         print right
+#         print result
         return sum(result) % (10**9 + 7)
         '''
         #Brute Force TC- N^2
