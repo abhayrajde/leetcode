@@ -1,18 +1,13 @@
 class Solution(object):
     def findOrder(self, numCourses, prerequisites):
-        prereq = {}
         prereq = {c:[] for c in range(numCourses)}
+        
         for crs,pre in prerequisites:
             prereq[crs].append(pre)
-        
-        #****the below code will not create the empty list which is also needed
-        # for crs,pre in prerequisites:
-        #     if(crs not in prereq):
-        #         prereq[crs] = []
-        #     prereq[crs].append(pre)
-        
+            
         output = []
-        visited , cycle = set(), set()
+        visited, cycle = set(), set()
+        
         def dfs(crs):
             if crs in cycle:
                 return False
@@ -21,17 +16,18 @@ class Solution(object):
             
             cycle.add(crs)
             for pre in prereq[crs]:
-                if dfs(pre) ==False:
+                if(dfs(pre) == False):
                     return False
             cycle.remove(crs)
             visited.add(crs)
             output.append(crs)
             return True
         
-        for c in range(numCourses):
-            if dfs(c) == False:
+        for crs in prereq:
+            if(dfs(crs) == False):
                 return []
         return output
+            
         """
         :type numCourses: int
         :type prerequisites: List[List[int]]
