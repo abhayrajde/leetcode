@@ -10,14 +10,11 @@ class Solution(object):
             return []
         res = []
         curr = ""
-        # curr+=str(root.val)
         def dfs(node,curr):    
             if not node.left and not node.right:
                 curr+=str(node.val)
                 res.append(curr[:])
                 return
-            # curr+=node.val
-            # curr+="->"
             
             if node.left:
                 dfs(node.left,curr+str(node.val)+"->")
