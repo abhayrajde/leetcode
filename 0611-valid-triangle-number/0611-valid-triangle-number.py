@@ -8,10 +8,12 @@ class Solution(object):
             
             while a < b:
                 if nums[a] + nums[b] > nums[c]:
+                    #WE HAVE A VALID TRIANGLE
                     res += (b - a)
                     b -= 1
                 
                 else:
+                    # we dont have a valid triangle, we want larger values so we move a += 1
                     a += 1
         return res
                     
