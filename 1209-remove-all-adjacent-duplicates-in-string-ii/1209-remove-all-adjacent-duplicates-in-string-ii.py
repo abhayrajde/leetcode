@@ -16,7 +16,7 @@ class Solution(object):
         return res
     
     
-    
+    #Different question asked to satin in bloomberg
     def candycrush(s):
         stack = []
         for i in range(len(s)):
