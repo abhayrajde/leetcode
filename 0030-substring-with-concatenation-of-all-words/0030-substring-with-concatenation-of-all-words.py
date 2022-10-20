@@ -31,29 +31,6 @@ class Solution(object):
             i += 1
         
         return res
-        
-        
-#         poss = -1
-#         contin = False
-#         while(i<len(s)):
-#             # temp = []
-#             if((i+w_len)<len(s) and temp_count[s[i:i+w_len]]>0):
-                
-#                 temp_count[s[i:i+w_len]]-=1
-#                 # print(temp_count)
-#                 if not contin:
-#                     poss = i
-#                     contin = True
-                
-#                 i += w_len
-                    
-#             else:
-#                 temp_count = word_count
-#                 if poss != -1 and contin:
-#                     res.append(poss)
-#                 i+=1
-#                 contin = False
-#         return res
         """
         :type s: str
         :type words: List[str]
