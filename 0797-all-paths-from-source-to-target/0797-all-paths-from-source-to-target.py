@@ -11,20 +11,20 @@ class Solution(object):
         
         res = []
         curr_path = []
-        def dfs(curr):
+        def dfs(curr, curr_path):
             
             if curr == end:
                 curr_path.append(curr)
                 res.append(curr_path[:])
-                curr_path.remove(curr)
+                # curr_path.remove(curr)
                 return
             
-            curr_path.append(curr)
+            # curr_path.append(curr)
             #TODO BUSINESS logic
             for next in conn_map[curr]:
-                dfs(next)
-            curr_path.remove(curr)
-        dfs(0)
+                dfs(next,curr_path+[curr])
+            # curr_path.remove(curr)
+        dfs(0,curr_path)
         return res
         """
         :type graph: List[List[int]]
