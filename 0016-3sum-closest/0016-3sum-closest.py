@@ -1,5 +1,6 @@
 class Solution(object):
     def threeSumClosest(self, nums, target):
+        """
         nums.sort()
         min1 = 100000000000
         for i in range(len(nums)-2):
@@ -29,12 +30,12 @@ class Solution(object):
         """
         #FOUND THIS SOLUTION IN DISCUSSION, WHICH IS IS KINDOFF EASIER AND MORE APPROACHABLE
         #GETTING THE ABSOLUTE VALUE IN BOTH THE WAY MAKES THIS SOLUTION MORE APPROACHABLE AND EASY
-        num.sort()
-        result = num[0] + num[1] + num[2]
-        for i in range(len(num) - 2):
-            j, k = i+1, len(num) - 1
+        nums.sort()
+        result = nums[0] + nums[1] + nums[2]
+        for i in range(len(nums) - 2):
+            j, k = i+1, len(nums) - 1
             while j < k:
-                sum = num[i] + num[j] + num[k]
+                sum = nums[i] + nums[j] + nums[k]
                 if sum == target:
                     return sum
                 
@@ -47,7 +48,7 @@ class Solution(object):
                     k -= 1
             
         return result
-        """        
+        """ """       
         """
         :type nums: List[int]
         :type target: int
