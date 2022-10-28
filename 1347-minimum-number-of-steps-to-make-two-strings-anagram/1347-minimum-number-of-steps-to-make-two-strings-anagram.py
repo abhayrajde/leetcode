@@ -1,11 +1,7 @@
 class Solution(object):
     def minSteps(self, s, t):
-        # dict_s = defaultdict(int)
         dict_t = defaultdict(int)
         
-        # for i in s:
-        #     dict_s[i] += 1
-            
         for i in t:
             dict_t[i] += 1
             
