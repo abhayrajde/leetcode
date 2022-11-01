@@ -12,11 +12,7 @@ class Solution(object):
                     stack1,stack2 = stack2,stack1
                 
         return stack1[0]
-#         if stack1:
-#             return stack1[0]
-#         else:
-#             return stack2[0]
-        # return stack1[0] if stack1 else stack2[0]
+
                 
                 
         
