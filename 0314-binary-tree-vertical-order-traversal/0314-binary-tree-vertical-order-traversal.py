@@ -33,11 +33,6 @@ class Solution(object):
             for h_dist,val in temp1:
                 temp2.append(val)
             res.append(temp2)
-                
-#         print(values)
-        
-#         for i in values:
-#             res.append(i[1])
         return res
         
         
