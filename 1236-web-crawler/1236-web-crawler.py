@@ -24,11 +24,13 @@ class Solution(object):
 #             for _ in range(len(q)):
 #                 links = htmlParser.getUrls(q.popleft())
 #                 for i in links:
-#                     if i not in visited:
-#                         if (i[:7+hostname_len] == startUrl[:7+hostname_len]):
-#                             q.append(i)
-#                             res.append(i)
-#                             visited.add(i)
+#                     if i in visited:
+#                         continue
+#                     if (i[:7+hostname_len] != startUrl[:7+hostname_len]):
+#                         continue
+#                     q.append(i)
+#                     res.append(i)
+#                     visited.add(i)
 #         return res
             
         
