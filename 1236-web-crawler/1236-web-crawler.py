@@ -10,6 +10,24 @@
 #        """
 
 class Solution(object):
+    def crawl(self, startUrl, htmlParser):
+        visited = {startUrl}
+        domain = startUrl.split("http://")[1].split("/")[0]
+        ans = [startUrl]
+        queue = collections.deque([startUrl])
+        while queue:
+            for _ in range(len(queue)):
+                url = queue.popleft()
+                check = htmlParser.getUrls(url)
+                for new_url in check:
+                    if new_url in visited:
+                        continue
+                    if new_url.split("http://")[1].split("/")[0] != domain:
+                        continue
+                    ans.append(new_url)
+                    visited.add(new_url)
+                    queue.append(new_url)        
+        return ans
 #     def crawl(self, startUrl, htmlParser):
 #         visited = set(startUrl)
 #         start_link = startUrl[7:]
@@ -34,24 +52,7 @@ class Solution(object):
 #         return res
             
         
-    def crawl(self, startUrl, htmlParser):
-        visited = {startUrl}
-        domain = startUrl.split("http://")[1].split("/")[0]
-        ans = [startUrl]
-        queue = collections.deque([startUrl])
-        while queue:
-            for _ in range(len(queue)):
-                url = queue.popleft()
-                check = htmlParser.getUrls(url)
-                for new_url in check:
-                    if new_url in visited:
-                        continue
-                    if new_url.split("http://")[1].split("/")[0] != domain:
-                        continue
-                    ans.append(new_url)
-                    visited.add(new_url)
-                    queue.append(new_url)        
-        return ans
+    
             
         """
         :type startUrl: str
