@@ -9,7 +9,7 @@ class Solution(object):
                 res.append(curr[:])
                 return
             # res.append(curr[:])
-            print(curr + [nums[i]])
+            # print(curr + [nums[i]])
             pick = dfs(i+1,curr + [nums[i]])
             not_pick = dfs(i+1,curr)
         dfs(0,[])
