@@ -11,7 +11,9 @@ class Node(object):
 class Solution(object):
     def flatten(self, head):
         stack = []
+        
         curr = head
+        
         while curr:
             if curr.child:
                 if curr.next:
@@ -20,7 +22,7 @@ class Solution(object):
                 curr.next.prev = curr
                 curr.child = None
                 
-            if not curr.next and len(stack) != 0:
+            if not curr.next and len(stack)!=0:
                 curr.next = stack.pop()
                 curr.next.prev = curr
                 
