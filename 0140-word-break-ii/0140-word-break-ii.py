@@ -19,8 +19,10 @@ class Solution(object):
             for word in wordDict:
                 if string.startswith(word):
                     sub_words = dfs(string[len(word):])
+                    print(sub_words)
                     
                     for sub_word in sub_words:
+                        
                         local_res.append(word + (" " if sub_word else "") + sub_word)
                         
             dp[string] = local_res
