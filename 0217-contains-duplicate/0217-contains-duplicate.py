@@ -8,13 +8,8 @@ class Solution(object):
                 return(True)
             
         return(False)
-        
-        # Time and Space Complexity = O(N)
-        # s1 = set(nums)
-        # if(len(s1) == len(nums)):
-        #     return(False)
-        # else:
-        #     return(True)
+    
+                
         """
         :type nums: List[int]
         :rtype: bool
