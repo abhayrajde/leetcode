@@ -1,5 +1,9 @@
 class Solution(object):
     def isAnagram(self, s, t):
+        
+        if(len(s) != len(t)):
+            return False
+        
         hms = {}
         hmt = {}
         
@@ -18,9 +22,9 @@ class Solution(object):
                 hmt[t[i]] += 1
         
         #compare both the hashmap dictionary
-        if(len(t)>len(s)):
-            s,t = t,s
-            hms,hmt = hmt,hms
+        # if(len(t)>len(s)):
+        #     s,t = t,s
+        #     hms,hmt = hmt,hms
             
         for i in range(len(s)):
             if((s[i] not in hmt) or (hms[s[i]] != hmt[s[i]])):
