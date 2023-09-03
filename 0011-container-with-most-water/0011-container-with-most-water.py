@@ -6,7 +6,7 @@ class Solution(object):
         j = len(height)-1
         while(i<j):
             current_area = (j-i) * min(height[i],height[j])
-            result = max(current_area,result)\
+            result = max(current_area,result)
             
             if(height[i]<=height[j]):
                 i+=1
